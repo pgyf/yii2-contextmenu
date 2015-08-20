@@ -15,8 +15,8 @@ class ContextmenuAsset  extends AssetBundle{
      */
     public function init()
     {
-        $this->setSourcePath(__DIR__ . '/assets');
-        $this->setupAssets('js', ['js/bootstrap-contextmenu.js']);
+        $this->sourcePath =  __DIR__ . '/assets';
+        $this->js = ['js/bootstrap-contextmenu.js'];
         parent::init();
     }
     

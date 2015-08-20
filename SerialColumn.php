@@ -26,9 +26,9 @@ class SerialColumn extends \yii\grid\SerialColumn{
      */
     public $contextMenuPrefix = "context-menu";
     /**
-     * The prefix of contextMenu ID is generated dynamically by the property
+     * contextMenu ID is generated dynamically by the property
      */
-    public $contextMenuPrefixAttribute = false;
+    public $contextMenuAttribute = false;
 
 
 
@@ -102,11 +102,11 @@ class SerialColumn extends \yii\grid\SerialColumn{
             if($this->contextMenuPrefix){
                 $contextMenuId = $this->contextMenuPrefix.'-';
             }
-            if(!$this->contextMenuPrefixAttribute){
+            if(!$this->contextMenuAttribute){
                 $contextMenuId .= $this->grid->getId().'-'.$index;
             }
             else{
-                $contextMenuId .= $model->{$this->contextMenuPrefixAttribute};
+                $contextMenuId .= $model->{$this->contextMenuAttribute};
             }
 
             $dropdown = Html::tag('ul', $content, ['class' => 'dropdown-menu' , 'role' => 'menu']);

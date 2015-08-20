@@ -19,6 +19,8 @@ class SerialColumn extends \yii\grid\SerialColumn{
      */
     public $contextmenu = true;
     private $_isContextmenu = false;
+    private $_contextMenuId = '';
+
 
 
     /**
@@ -108,7 +110,7 @@ class SerialColumn extends \yii\grid\SerialColumn{
             else{
                 $contextMenuId .= $model->{$this->contextMenuAttribute};
             }
-
+            $this->_contextMenuId = $contextMenuId;
             $dropdown = Html::tag('ul', $content, ['class' => 'dropdown-menu' , 'role' => 'menu']);
             return  $pageNumContent.PHP_EOL . Html::tag('div', $dropdown, [ 'id' => $contextMenuId , 'style' => 'display:block;' ]);
         }
@@ -145,11 +147,17 @@ class SerialColumn extends \yii\grid\SerialColumn{
     }
     
     
-    
-    
-    
-    
-    
+    public function getContextMenuId(){
+        return $this->_contextMenuId;
+    }
+
+
+
+
+
+
+
+
     /**
      * @var string the ID of the controller that should handle the actions specified here.
      * If not set, it will use the currently active controller. This property is mainly used by

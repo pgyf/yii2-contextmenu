@@ -36,11 +36,20 @@ Usage
 
 Once the extension is installed, simply use it in your code by  :
 
+GridView options
 ```php
-        [
-            'class' => \liyunfang\contextmenu\SerialColumn::className(),
-            'contextmenu' => true,
-            'contextMenuPrefixAttribute' => 'id',
-            //'template' => '{view} {update}', 
-        ],
+ 'columns' => [
+    [
+        'class' => \liyunfang\contextmenu\SerialColumn::className(),
+        'contextmenu' => true,
+        //'contextMenuAttribute' => 'id',
+        //'template' => '{view} {update}', 
+   ],
+    ....
+],
+'rowOptions' => function($model, $key, $index, $gird){
+     $contextMenuId = $gird->columns[0]->contextMenuId;
+     return ['data'=>[ 'toggle' => 'context','target'=> "#".$contextMenuId ]];
+ },
+
  ```

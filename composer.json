@@ -1,6 +1,7 @@
 {
 	"name": "liyunfang/yii2-contextmenu",
 	"description": "yii2 Extended for bootstrap-contextmenu plugin https://github.com/sydcanem/bootstrap-contextmenu",
+	"homepage": "https://github.com/liyunfang/yii2-contextmenu",
 	"type": "yii2-extension",
 	"keywords": ["yii2","extension","yii2-contextmenu","contextmenu"],
 	"license": "MIT",
@@ -16,7 +17,7 @@
     },
 	"autoload": {
 		"psr-4": {
-			"liyunfang\\yii2-contextmenu\\": ""
+			"liyunfang\\contextmenu\\": ""
 		}
 	}
 }

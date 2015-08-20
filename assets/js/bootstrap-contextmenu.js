@@ -204,6 +204,11 @@
 			});
 		})
 		.on('contextmenu.context.data-api', toggle, function(e) {
+                    $(toggle).each(function () {
+                            var target = $(this).data('target');
+                            if (!target) return;
+                            $(target).removeClass("open");
+                    });
 			$(this).contextmenu('show', e);
 
 			e.preventDefault();

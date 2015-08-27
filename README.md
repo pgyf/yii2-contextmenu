@@ -3,6 +3,8 @@ yii2 Extended for bootstrap-contextmenu
 ===============================
 yii2 Extended for bootstrap-contextmenu plugin https://github.com/sydcanem/bootstrap-contextmenu
 
+Gird right - click operation, you can remove the operation column
+
 ![Effect picture 1](https://github.com/liyunfang/wr/blob/master/images/yii2-contextmenu-1.png "Effect picture 1")  
 
 ![Effect picture 2](https://github.com/liyunfang/wr/blob/master/images/yii2-contextmenu-2.png "Effect picture 2")  

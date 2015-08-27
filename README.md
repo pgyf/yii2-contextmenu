@@ -41,7 +41,7 @@ GridView options
  'columns' => [
     [
         'class' => \liyunfang\contextmenu\SerialColumn::className(),
-        'contextmenu' => true,
+        'contextMenu' => true,
         //'contextMenuAttribute' => 'id',
         //'template' => '{view} {update}', 
    ],
@@ -53,3 +53,28 @@ GridView options
  },
 
  ```
+ 
+ or use KartikSerialColumn,But this requires the installation of grid Kartik extension.
+ Please see https://github.com/kartik-v/yii2-grid
+ 
+ GridView options
+```php
+ 'columns' => [
+    [
+        'class' => \liyunfang\contextmenu\KartikSerialColumn::className(),
+        'contextMenu' => true,
+        //'contextMenuAttribute' => 'id',
+        //'template' => '{view} {update}', 
+   ],
+    ....
+],
+'rowOptions' => function($model, $key, $index, $gird){
+     $contextMenuId = $gird->columns[0]->contextMenuId;
+     return ['data'=>[ 'toggle' => 'context','target'=> "#".$contextMenuId ]];
+ },
+
+ ```
+
+
+该扩展为gird行右击菜单，可以省去操作列。
+提供了继承yii2 grid的SerialColumn 和 继承 Kartik gird的SerialColumn。

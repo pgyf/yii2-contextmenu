@@ -45,7 +45,7 @@
 			if (this.isDisabled()) return;
 
 			this.closemenu();
-
+                        $('[data-toggle="context"]').each(function(){ $(this).contextmenu('closemenu', e); });
 			if (this.before.call(this,e,$(e.currentTarget)) === false) return;
                         
 			$menu = this.getMenu();
@@ -89,14 +89,7 @@
 				.off('click.context.data-api', $menu.selector);
 			// Don't propagate click event so other currently
 			// opened menus won't close.
-
-//                        注释 e.stopPropagation();
-//                        var $clickTarget = $(e.target);
-//                        var confirm = $clickTarget.data("confirm");
-//                        var method = $clickTarget.data("method");
-//                        if(!confirm && !method){
-//                            e.stopPropagation();
-//                        } 
+                        //e.stopPropagation();
                         
 		}
 
@@ -204,13 +197,7 @@
 			});
 		})
 		.on('contextmenu.context.data-api', toggle, function(e) {
-                    $(toggle).each(function () {
-                            var target = $(this).data('target');
-                            if (!target) return;
-                            $(target).removeClass("open");
-                    });
 			$(this).contextmenu('show', e);
-
 			e.preventDefault();
 			e.stopPropagation();
 		});

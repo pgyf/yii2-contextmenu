@@ -50,10 +50,10 @@ GridView options
         //'template' => '{view} {update}', 
         'urlCreator' => function($action, $model, $key, $index) { 
                 if('update' == $action){
-                    return $this->createUrl(['/user/index','id' => $model->id]);
+                    return \Yii::$app->getUrlManager()->createUrl(['/user/index','id' => $model->id]);
                 }
                 if('view' == $action){
-                    return $this->createUrl(['/user/view','id' => $model->id]);
+                    return \Yii::$app->getUrlManager()->createUrl(['/user/view','id' => $model->id]);
                 }
                 return '#'; 
         },
@@ -82,10 +82,10 @@ GridView options
         'headerOptions'=>['class'=>'kartik-sheet-style'],
         'urlCreator' => function($action, $model, $key, $index) { 
                 if('update' == $action){
-                    return $this->createUrl(['/user/index','id' => $model->id]);
+                    return \Yii::$app->getUrlManager()->createUrl(['/user/index','id' => $model->id]);
                 }
                 if('view' == $action){
-                    return $this->createUrl(['/user/view','id' => $model->id]);
+                    return \Yii::$app->getUrlManager()->createUrl(['/user/view','id' => $model->id]);
                 }
                 return '#'; 
         },

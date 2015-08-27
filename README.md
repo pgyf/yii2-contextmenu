@@ -5,6 +5,8 @@ yii2 Extended for bootstrap-contextmenu plugin https://github.com/sydcanem/boots
 
 ![Effect picture 1](https://github.com/liyunfang/wr/blob/master/images/yii2-contextmenu-1.png "Effect picture 1")  
 
+![Effect picture 2](https://github.com/liyunfang/wr/blob/master/images/yii2-contextmenu-2.png "Effect picture 2")  
+
 
 
 
@@ -44,6 +46,15 @@ GridView options
         'contextMenu' => true,
         //'contextMenuAttribute' => 'id',
         //'template' => '{view} {update}', 
+        'urlCreator' => function($action, $model, $key, $index) { 
+                if('update' == $action){
+                    return $this->createUrl(['/user/index','id' => $model->id]);
+                }
+                if('view' == $action){
+                    return $this->createUrl(['/user/view','id' => $model->id]);
+                }
+                return '#'; 
+        },
    ],
     ....
 ],
@@ -65,6 +76,17 @@ GridView options
         'contextMenu' => true,
         //'contextMenuAttribute' => 'id',
         //'template' => '{view} {update}', 
+        'contentOptions'=>['class'=>'kartik-sheet-style'],
+        'headerOptions'=>['class'=>'kartik-sheet-style'],
+        'urlCreator' => function($action, $model, $key, $index) { 
+                if('update' == $action){
+                    return $this->createUrl(['/user/index','id' => $model->id]);
+                }
+                if('view' == $action){
+                    return $this->createUrl(['/user/view','id' => $model->id]);
+                }
+                return '#'; 
+        },
    ],
     ....
 ],

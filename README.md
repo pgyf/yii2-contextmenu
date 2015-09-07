@@ -50,7 +50,7 @@ GridView options
         'template' => '{view} {update} <li class="divider"></li> {story}', 
         'buttons' => [
              'story' => function ($url, $model) {
-                 $title = Yii::t('app', 'story');
+                 $title = Yii::t('app', 'Story');
                  $label = '<span class="glyphicon glyphicon-film"></span> ' . $title;
                  $url = \Yii::$app->getUrlManager()->createUrl(['/user/story','id' => $model->id]);
                  $options = ['tabindex' => '-1','title' => $title, 'data' => ['pjax' => '0' ,  'toggle' => 'tooltip']];

@@ -47,12 +47,12 @@ GridView options
         'class' => \liyunfang\contextmenu\SerialColumn::className(),
         'contextMenu' => true,
         //'contextMenuAttribute' => 'id',
-        'template' => '{view} {update} <li class="divider"></li> {list}', 
+        'template' => '{view} {update} <li class="divider"></li> {story}', 
         'buttons' => [
              'story' => function ($url, $model) {
-                 $title = Yii::t('app', 'list');
+                 $title = Yii::t('app', 'story');
                  $label = '<span class="glyphicon glyphicon-film"></span> ' . $title;
-                 $url = \Yii::$app->getUrlManager()->createUrl(['/user/list','id' => $model->id]);
+                 $url = \Yii::$app->getUrlManager()->createUrl(['/user/story','id' => $model->id]);
                  $options = ['tabindex' => '-1','title' => $title, 'data' => ['pjax' => '0' ,  'toggle' => 'tooltip']];
                  return '<li>' . Html::a($label, $url, $options) . '</li>' . PHP_EOL;
               }

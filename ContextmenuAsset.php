@@ -22,7 +22,9 @@ class ContextmenuAsset  extends AssetBundle{
     
   
     public $depends=[
-        //'backend\assets\AppAsset',
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
     
 }

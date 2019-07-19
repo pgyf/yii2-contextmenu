@@ -58,6 +58,9 @@
 				.addClass('open')
 				.on('click.context.data-api', items, $.proxy(this.onItem, this, $(e.currentTarget)))
 				.trigger('shown.bs.context', relatedTarget);
+			
+                        // FixBootstrap 4 # github.com/jonyx4
+                        $menu[0].innerHTML = $menu[0].innerHTML.replace('dropdown-menu','dropdown-menu show');			
 
 			// Delegating the `closemenu` only on the currently opened menu.
 			// This prevents other opened menus from closing.
@@ -84,6 +87,9 @@
 			$menu.removeClass('open')
 				.off('click.context.data-api', items)
 				.trigger('hidden.bs.context', relatedTarget);
+			
+                        // FixBootstrap 4 # github.com/jonyx4
+                        $menu[0].innerHTML = $menu[0].innerHTML.replace('dropdown-menu show','dropdown-menu'); 		
 
 			$('html')
 				.off('click.context.data-api', $menu.selector);
